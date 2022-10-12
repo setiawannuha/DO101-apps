@@ -43,6 +43,7 @@ app.get("/api/users", (req, res) => {
   try {
     db.query(`SELECT * FROM users`, (err, result) => {
       if (err) {
+        console.log(err);
         throw Error;
       }
       res.json(result.rows);
